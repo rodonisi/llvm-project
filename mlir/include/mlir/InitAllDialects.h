@@ -17,6 +17,7 @@
 #include "mlir/Dialect/AVX512/AVX512Dialect.h"
 #include "mlir/Dialect/Affine/IR/AffineOps.h"
 #include "mlir/Dialect/GPU/GPUDialect.h"
+#include "mlir/Dialect/LLHD/LLHDDialect.h"
 #include "mlir/Dialect/LLVMIR/LLVMAVX512Dialect.h"
 #include "mlir/Dialect/LLVMIR/LLVMDialect.h"
 #include "mlir/Dialect/LLVMIR/NVVMDialect.h"
@@ -54,6 +55,7 @@ inline void registerAllDialects() {
     registerDialect<ROCDL::ROCDLDialect>();
     registerDialect<SDBMDialect>();
     registerDialect<shape::ShapeDialect>();
+    registerDialect<llhd::LLHDDialect>();
     return true;
   }();
   (void)init_once;
